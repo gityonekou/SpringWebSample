@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<!--/* Thymeleaf(タイムリーフ)を使うことを宣言 ハンドブックはThymeleaf チートシートで検索 */-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<!--/* スタイルシートはBootstrap(フロントエンド側フレームワーク)を使う。 */-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+		crossorigin="anonymous">
+	<title>Formと入力チェック(バリデーション)</title>
+</head>
+<body>
+	<main class="container">
+		<h1>フォームの入力内容を出力します</h1>
+		<p>メールアドレス：<span th:text="${sample1Step04InputForm.email}">email</span></p>
+		<p>整数：<span th:text="${sample1Step04InputForm.integer}">integer</span></p>
+		<p>パスワード１：<span th:text="${sample1Step04InputForm.password1}">password1</span></p>
+		<p>パスワード２：<span th:text="${sample1Step04InputForm.password2}">password2</span></p>
+	</main>
+</body>
+</html>

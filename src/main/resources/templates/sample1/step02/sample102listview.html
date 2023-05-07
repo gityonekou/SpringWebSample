@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--/* Thymeleaf(タイムリーフ)を使うことを宣言 ハンドブックはThymeleaf チートシートで検索 */-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<!--/* スタイルシートはBootstrap(フロントエンド側フレームワーク)を使う。 */-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+		crossorigin="anonymous">
+	<meta charset="UTF-8">
+	<title>リスト表示画面</title>
+</head>
+<body>
+	<main class="container">
+		<h1>リスト表示のサンプルです</h1>
+		
+		<section class="border p-1 m-1">
+			<h2>th:eachとth:if、th:utextのサンプル</h2>
+			<!--/*
+				th:each属性でListの繰り返しを行う。statを指定して繰り返し処理中のステータスを知ることもできる。
+				statを指定する場合は,で区切って変数をステータス格納用の変数を指定する。デフォルトではfor-eachで
+				値を格納する変数のみ
+				繰り返しの変数を格納するのみの場合＝th:each="item : ${forEach}"
+				繰り返し情報を格納した変数も宣言する場合＝th:each="item, addstatParam : ${forEach}"
+				 */-->
+			<!--/* th:blockについてはhtmlとしては出力されない。ブロック的な扱いとなる。詳しくは、出力後のhtmlにて */-->
+			<th:block th:each="item, statParam : ${forEach}">
+				<!--/*
+					 th:ifで条件判定し、文字列長が20文字以下の場合のみこのdivブロックが表示される
+					 */-->
+				<div class="border p-1 m-1" th:if="${item.length() <= 20}">
+					<!--/*
+						　th:classappendで現在の繰り返し位置が偶数の場合はclass="text-primary"、
+						　奇数の場合はclass="text-success"を設定
+						*/-->
+					<p th:classappend="${statParam.even} ? text-primary : text-success">
+						<!--/* 繰り返しのステータスを参照して現在のインデックス(0から開始)を設定 */-->
+						<span th:text="${statParam.index}">??</span>番目の要素
+					</p>
+					<p>
+						<!--/* th:textを使うと文字列はサニタライズされる */-->
+						th:textの場合(サニタライズして出力(タグ文字はエスケープされる))：<span th:text="${item}">？？？</span>
+					</p>
+					<p>
+						<!--/* th:utextを使うと文字列がそのまま出力される */-->
+						th:utextの場合(そのまま出力)：<span th:utext="${item}">？？？</span>
+					</p>
+				</div>
+			</th:block>
+		</section>
+		
+		<section class="border p-1 m-1">
+			<!--/* booleanの条件について
+					true/false
+					数値:0はfalse
+					null値はfalse
+					文字列で"0","false","no","off"はfalse
+				*/-->
+			<h2>th:ifとth:unlessのnull値の扱いサンプル</h2>
+			<!--/* th:ifは条件がtrueの場合にそのタグと子・孫のタグを出力する。また、null値をfalseとして扱う */-->
+			<p th:if="${nullValue}">th:ifがnullの場合</p>
+			<p th:if="${nonNullValue}">th:ifがnull以外の場合</p>
+			<!--/* th:unlessは条件がfalseの時にそのタグと子・孫のタグを出力する。null値をfalse(つまり、出力する条件)として扱う */-->
+			<p th:unless="${nullValue}">th:unlessがnullの場合</p>
+			<p th:unless="${nonNullValue}">th:unlessがnull以外の場合</p>
+		</section>
+	</main>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--/* Thymeleaf(タイムリーフ)を使うことを宣言 ハンドブックはThymeleaf チートシートで検索 */-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<!--/* layout:decorateで埋め込み先を定義 サンプルのままだと警告が出るので注意 */-->
+		layout:decorate="~{sample1/step03/sample103layout}">
+<head>
+<meta charset="UTF-8">
+<title>「Spring Boot入門:Thymeleafのファイル分割」Contents</title>
+</head>
+<body>
+	<!--/* layoutに埋め込む部分を定義 */-->
+	<div layout:fragment="contents">
+		<!--/* modelに渡した値はどのhtmlからでも参照可能 */-->
+		<h1 th:text="${title}">タイトルダミー</h1>
+		<p>コンテンツ</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>ヘッダー</title>
+</head>
+<body>
+	<!-- th:fragmentで別ファイルから読み込みできるようにする */-->
+	<header class="my-2" th:fragment="header">
+		<nav class="navbar navbar-dark bg-dark">
+			<!--/* modelに渡した値はどのhtmlからでも参照可能 */-->
+			<p class="navbar-brand" th:text="${title}">ダミー</p>
+		</nav>
+	</header>
+</body>
+</html>

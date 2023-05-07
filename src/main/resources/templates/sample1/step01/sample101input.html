@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--/* Thymeleaf(タイムリーフ)を使うことを宣言 ハンドブックはThymeleaf チートシートで検索 */-->
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+<!--/*	Bootstrap(フロントエンド側フレームワーク)を使う。今回のサンプルでは使わなくてもよいが、
+		スタイルシートは共通化する */-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+		rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+		crossorigin="anonymous">
+	<title>入力画面</title>
+</head>
+<body>
+<!-- thymeleafでは以下3つのコメントの種類があります -->
+<!-- タイプ１：通常のhtmlのコメント -->
+<!--/*	タイプ２：thymeleafのパーサーレベルのコメント
+		このコメントはレンダリング時に除去され、生成されたhtml上には出力されない */-->
+<!--/*-->  <!--*/-->
+<!--/*-->このようにくくることができるので、ブラウザで開いたときは表示されるが、
+サーバー上で動かすとなくなるという書き方もできる<!--*/-->
+
+<!--/*/ タイプ３：プロトタイプのみのコメント
+		ブラウザで直接開いた場合は単純なhtmlのコメントとして扱われるが、Thymelearのレンダリングは対象となる。
+		プロトタイプ上ではコメントとして扱うが、実際にサーバーで動かすときはThymeleafに処理させたい、といった
+		場合に使用する /*/-->
+<!--/*/　タイプ３コメント部分　/*/-->
+<!-- 詳細は以下を参照 -->
+<!--/*
+https://qiita.com/opengl-8080/items/eb3bf3b5301bae398cc2
+*/-->
+
+	<main class="container">
+		<h1>値を入力してください</h1>
+		<!--/* Thymeleafの属性を使用。ただの、action、methodでも動きます */-->
+		<form th:action="@{/sample1/step01/output}" th:method="post">
+			<div class="mb-3">
+				<label for="text1" class="form-label">入力その１：</label>
+				<input type="text" class="form-control" id="text1" name="text1">
+			</div>
+			<div class="mb-3">
+				<label for="text2" class="form-label">入力その２：</label>
+				<input type="text" class="form-control" id="text2" name="text2">
+			</div>
+			<div class="mb-3">
+				<label for="text3" class="form-label">入力その３：</label>
+				<input type="text" class="form-control" id="text3" name="text3">
+			</div>
+			<button type="submit" class="btn btn-primary">入力完了</button>
+		</form>
+	</main>
+</body>
+</html>

@@ -21,14 +21,14 @@
 					</li>
 					<!--/* 管理者ロールの場合 */-->
 					<li class="nav-item" sec:authorize="hasRole('ADMIN')">
-						<a class="nav-link active" aria-current="page" th:href="@{/sample1/admin}">管理者ページ</a>
+						<a class="nav-link active" aria-current="page" th:href="@{/sample1/admin/}">管理者ページ</a>
 					</li>
 					<!--/* ユーザロールの場合 */-->
 					<li class="nav-item" sec:authorize="hasRole('USER')">
 						<a class="nav-link active" aria-current="page" th:href="@{/sample1/}">ユーザページ(このトップ画面)</a>
 					</li>
 				</ul>
-				<form class="d-flex" method="post" th:action="@{/sample1/logout}">
+				<form class="d-flex" method="post" th:action="@{/logout/}">
 					<button class="btn btn-outline-success" type="submit">ログアウト</button>
 				</form>
 			</div>

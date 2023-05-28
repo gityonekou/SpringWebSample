@@ -10,7 +10,8 @@
 	</parent>
 	<groupId>com.yonetani.study</groupId>
 	<artifactId>SpringWebSample</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<!-- <version>0.0.1-SNAPSHOT</version> -->
+	<version>1.0.0.RELEASE</version>
 	<name>SpringWebSample</name>
 	<description>SpringWebSampleDemo project for Spring Boot</description>
 	<properties>
@@ -66,6 +67,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.thymeleaf.extras</groupId>
+			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
 		</dependency>
 	</dependencies>
 

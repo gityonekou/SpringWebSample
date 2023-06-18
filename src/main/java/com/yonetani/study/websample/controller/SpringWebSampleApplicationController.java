@@ -12,6 +12,7 @@ package com.yonetani.study.websample.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  * @author user
@@ -20,7 +21,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class SpringWebSampleApplicationController {
 	
-	// トップページ(/index)にアクセス時:http get
+	/**
+	 * http getでトップページ(/index)にアクセス時
+	 * @return
+	 */
 	@GetMapping
 	public String index() {
 		// 戻り値はThymeleaf(タイムリーフ)テンプレートファイルの名称(拡張子を除く)
@@ -29,7 +33,10 @@ public class SpringWebSampleApplicationController {
 		return "index";
 	}
 	
-	// トップページ(/index)にアクセス時:http get
+	/**
+	 * http getでトップメニューページ(/menu)にアクセス時
+	 * @return
+	 */
 	@GetMapping("/menu/")
 	public String getSample1TopMenu() {
 		// 戻り値はThymeleaf(タイムリーフ)テンプレートファイルの名称(拡張子を除く)
@@ -37,5 +44,14 @@ public class SpringWebSampleApplicationController {
 		// むしろ、書いたらダメ
 		// return "index";
 		return "menu";
+	}
+	
+	/**
+	 * http postでトップメニューページ(/menu)にアクセス時
+	 * @return
+	 */
+	@PostMapping("/menu/")
+	public String postSample1TopMenu() {
+		return getSample1TopMenu();
 	}
 }

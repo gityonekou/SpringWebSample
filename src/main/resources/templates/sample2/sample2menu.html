@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+		rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+		crossorigin="anonymous">
+<title>Zenn あしたば サンプルメニュー</title>
+</head>
+<body>
+	<div class="mb-3">
+		<div class="card">
+			<div class="card-body bg-info">
+				<h5 class="card-title" th:text="${titleMessage}"></h5>
+				<p class="card-text" th:text="${titleText}"></p>
+				<form class="d-flex" method="post" th:action="@{/menu/}">
+					<button class="btn btn-outline-success" type="submit">トップページへ</button>
+				</form>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">本家リンクはこちら：「https://zenn.dev/angelica/books/52be1e365c61ea」</li>
+			</ul>
+			<div class="card-body"><a th:href="@{/sample2/step03/}" class="card-link">03：掲示板の入力フォームを作る</a></div>
+			<div class="card-body"><a th:href="@{/sample2/step04/}" class="card-link">04：PRGパターンの適用とバリデーション</a></div>
+			<div class="card-body"><a th:href="@{/sample2/step05/}" class="card-link">05：Mybatisを使ったデータの保存</a></div>
+			<div class="card-body"><a th:href="@{/sample2/step06/}" class="card-link">06：MyBatisを使ったデータの取得、その表示</a></div>
+			<div class="card-body"><a th:href="@{/sample2/step08/}" class="card-link">step08:ログイン・ログアウトするユーザの登録導線</a></div>
+			<div class="card-body"><a th:href="@{/sample2/step09/}" class="card-link">09：Userの概念をデータに紐付ける / REST API</a></div>
+		</div>
+	</div>
+</body>
+</html>

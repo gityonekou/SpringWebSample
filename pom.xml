@@ -11,7 +11,7 @@
 	<groupId>com.yonetani.study</groupId>
 	<artifactId>SpringWebSample</artifactId>
 	<!-- <version>0.0.1-SNAPSHOT</version> -->
-	<version>1.0.0.RELEASE</version>
+	<version>1.1.0.RELEASE</version>
 	<name>SpringWebSample</name>
 	<description>SpringWebSampleDemo project for Spring Boot</description>
 	<properties>
@@ -51,10 +51,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-validation</artifactId>
 		</dependency>
+		<!-- orマッパー JPAを使用 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
+		<!-- orマッパー MyBatisも併せて使えるか-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.mybatis.scripting</groupId>
+			<artifactId>mybatis-thymeleaf</artifactId>
+			<version>1.0.4</version>
+		</dependency>
+		<!-- spring securityを使用 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>

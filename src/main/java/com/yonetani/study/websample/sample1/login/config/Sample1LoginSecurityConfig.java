@@ -74,11 +74,13 @@ public class Sample1LoginSecurityConfig {
 				//.requestMatchers("/", "/login/").permitAll()
 				// /sample1/adminはADMINロールを持つユーザだけアクセス可能
 				// :名前はROLE_ADMINとなることに注意
-				.requestMatchers("/sample1/admin").hasRole("ADMIN")
+				.requestMatchers("/sample2/admin").hasRole("ADMIN")
 				// /sample1/**はUSERロールを持つユーザだけがアクセス可能
 				// 実際のアプリではrequestMatchers("/**").hasRole("USER")となるのかな？？
 				// ユーザ権限でアクセスするパスは後々検討が必要
+				.requestMatchers("/menu/**").hasRole("USER")
 				.requestMatchers("/sample1/**").hasRole("USER")
+				.requestMatchers("/sample2/**").hasRole("USER")
 				// その他すべてのURLに対して認証を要求
 				.anyRequest().authenticated()
 		);

@@ -4,7 +4,7 @@
  * ユーザ登録画面のフォーム入力データです。
  * 
  */
-package com.yonetani.study.websample.sample1.admin.form;
+package com.yonetani.study.websample.sample2.admin.form;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
@@ -18,7 +18,7 @@ import lombok.Data;
  *
  */
 @Data
-public class Sample1UserForm {
+public class Sample2UserForm {
 
 	// ユーザ名
 	@NotNull

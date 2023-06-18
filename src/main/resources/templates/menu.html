@@ -5,10 +5,10 @@
 				xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 	<meta charset="UTF-8">
-	<!--/* スタイルシートはBootstrap(フロントエンド側フレームワーク)を使う。 */-->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
-		rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
-		crossorigin="anonymous">
+	<!--/* スタイルシートはBootstrap 5.3 (フロントエンド側フレームワーク)を使う。 */-->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+			crossorigin="anonymous">
 	<title>トップページメニュー</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" th:href="@{/sample1/}">トップページ</a>
+						<a class="nav-link active" aria-current="page" th:href="@{/menu/}">トップページ</a>
 					</li>
 					<!--/* 管理者ロールの場合 */-->
 					<li class="nav-item" sec:authorize="hasRole('ADMIN')">
@@ -35,12 +35,38 @@
 		</div>
 		
 	</nav>
-	<h2>サンプルメニュー</h2>
 	<div class="mb-3">
-		<label for="text1" class="form-label">土谷の備忘録(びぼうろく)：</label>
-		<label for="text1" class="form-label">https://www.tsuchiya.blog/spring-boot-tutorial/</label>
-		<label for="text1" class="form-label"><a th:href="@{/sample1/}">土谷の備忘録(びぼうろく)サンプルメニューへ</a><br>
-		</label>
+		<div class="card">
+			<div class="card-body bg-primary">
+				<h3 class="card-title">サンプルメニュー</h3>
+			</div>
+		</div>
+	</div>
+	<!-- 土谷の備忘録(びぼうろく) -->
+	<div class="col">
+		<div class="card">
+			<div class="card-body bg-info">
+				<h5 class="card-title">土谷の備忘録(びぼうろく)</h5>
+				<p class="card-text">土谷の備忘録(びぼうろく)サンプルを作成しています</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">本家リンクはこちら：「https://www.tsuchiya.blog/spring-boot-tutorial/」</li>
+			</ul>
+			<div class="card-body"><a th:href="@{/sample1/}" class="card-link">土谷の備忘録(びぼうろく)サンプルメニューへ</a></div>
+		</div>
+	</div>
+	<!-- Zenn あしたば -->
+	<div class="col">
+		<div class="card">
+			<div class="card-body bg-info-subtle">
+				<h5 class="card-title">Zenn あしたば</h5>
+				<p class="card-text">Javaの基礎を学び終えたアナタに贈る、 SpringBoot/SpringSecurityによる掲示板開発ハンズオン</p>
+			</div>
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">本家リンクはこちら：「https://zenn.dev/angelica/books/52be1e365c61ea」</li>
+			</ul>
+			<div class="card-body"><a th:href="@{/sample2/}" class="card-link">Zenn あしたばサンプルメニューへ</a></div>
+		</div>
 	</div>
 </body>
 </html>

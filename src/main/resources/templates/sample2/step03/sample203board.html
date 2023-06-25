@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{sample2/step03/sample203layout}">
+<head>
+	<title>掲示板</title>
+	<meta name="description" content="「Javaの基礎を学び終えたアナタに贈る, SpringBoot/SpringSecurityによる掲示板開発ハンズオン」 掲示板">
+	<link th:href="@{/css/sample2/sample02step03bord.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div layout:fragment="layoutContent">
+		<div id="board-area">
+			投稿の内容を表示する場所
+		</div>
+		<hr>
+		<form method="POST" th:action="@{/sample2/step03/board/}" th:object="${commentForm}">
+			<input placeholder="名前" th:field="*{name}">
+			<input placeholder="メールアドレス" th:field="*{mailAddress}">
+			<textarea placeholder="コメント内容"  th:field="*{comment}" rows="5" cols="80" wrap="off"></textarea>
+			<button>送信</button>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html	xmlns="http://www.w3.org/1999/xhtml"
+<!--/* xmlns:layoutの中でxmlns:th="http://www.thymeleaf.org"は宣言される？？のでソース側で明示的に宣言しなくてもOKです */-->
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="common-meta">
+<title>ベースのタイトルは呼び出し元に上書きされます</title>
+<link th:href="@{/css/sample2/sample02step03.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<header>ヘッダー</header>
+	<div id="content">
+		<main id="main-area" layout:fragment="layoutContent">
+			<p>デフォルトコンテント この内容は呼び出し元により書き換えられる</p>
+		</main>
+		<div id="side-area">サイドバー</div>
+	</div>
+	<footer>フッター</footer>
+</body>
+</html>

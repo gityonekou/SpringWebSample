@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+<!--/* sample203sidebar.htmlの内容をベースとして、このhtmlの内容で書き換える
+	    あと、xmlns:layoutの中でxmlns:th="http://www.thymeleaf.org"は宣言される？？ので
+	    ソース側で明示的に宣言しなくてもよくなる */-->
+		layout:decorate="~{sample2/step03/sample203layout}">
+<head>
+	<!--/* headの内容はマージされる:つまり、sample203sidebarの内容に追記されるので
+		重複する内容は不要となる。ここでは検証のため残している */-->
+<meta charset="UTF-8">
+<meta name="description" content="step03main">
+<title>サンプル02 step03画面</title>
+</head>
+<body>
+	<div layout:fragment="layoutContent">
+		<p>サンプル02 step03画面</p>
+	</div>
+</body>
+</html>

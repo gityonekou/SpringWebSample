@@ -26,7 +26,7 @@ import com.yonetani.study.websample.sample2.admin.form.Sample2UserForm;
  *
  */
 @Controller
-@RequestMapping("/sample1/")
+@RequestMapping("/sample2/")
 public class Sample2AdminController {
 
 //	// 管理画面(ユーザ登録画面)選択時
@@ -40,7 +40,7 @@ public class Sample2AdminController {
 	// 戻り値のviewオブジェクトにreturnで返す文字列(ビュー名)と同じようにすること
 	@GetMapping("/admin/")
 	public ModelAndView getAdminPage(ModelAndView modelAndView) {
-		modelAndView.setViewName("sample1/admin/adminpage");
+		modelAndView.setViewName("sample2/admin/adminpage");
 		modelAndView.addObject("sample1UserForm", new Sample2UserForm());
 		return modelAndView;
 	}
@@ -49,7 +49,7 @@ public class Sample2AdminController {
 	@PostMapping("/admin/")
 	public ModelAndView postUser(ModelAndView modelAndView) {
 		// TODO:★画面：登録処理を作成中★
-		modelAndView.setViewName("sample1/admin/adminpage");
+		modelAndView.setViewName("sample2/admin/adminpage");
 		modelAndView.addObject("sample1UserForm", new Sample2UserForm());
 		return modelAndView;
 	}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html	xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+		layout:decorate="~{sample2/step03/sample203layout}">
+<head>
+	<title>掲示板</title>
+	<meta name="description" content="「Javaの基礎を学び終えたアナタに贈る, SpringBoot/SpringSecurityによる掲示板開発ハンズオン」 掲示板">
+	<link th:href="@{/css/sample2/sample02step03bord.css}" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div layout:fragment="layoutContent">
+		<div id="board-area">
+			投稿の内容を表示する場所
+		</div>
+		<hr>
+		<!-- /*	th:object=に指定するキーはバリデーションチェックを行うクラスのクラス名(先頭小文字)
+				となることに注意。別の任意のキーにするとバリデーションチェック結果を取得できずに
+				th:errorsやth:if="${#fields.hasErrors('mailAddress')}が常に空・falseとなり
+				バリデーション結果が表示されない */ -->
+				
+		<form method="POST" th:action="@{${action}}" th:object="${sample2Step05CommentForm}">
+			<!-- 名前 -->
+			<input placeholder="名前" th:field="*{name}">
+			<span class="error-message" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+			<!-- メールアドレス -->
+			<input placeholder="メールアドレス" th:field="*{mailAddress}">
+			<span class="error-message" th:if="${#fields.hasErrors('mailAddress')}" th:errors="*{mailAddress}">Mail Address Error</span>
+			<!-- コメント内容 -->
+			<textarea placeholder="コメント内容"  th:field="*{comment}" rows="5" cols="80" wrap="off"></textarea>
+			<span class="error-message" th:if="${#fields.hasErrors('comment')}" th:errors="*{comment}">comment Error</span>
+			<button>送信[step5]</button>
+			<div><p th:errors="*{name}">name</p></div>
+			<div><p th:errors="*{mailAddress}">mailAddress</p></div>
+			<div><p th:errors="*{comment}">comment</p></div>
+		</form>
+	</div>
+</body>
+</html>

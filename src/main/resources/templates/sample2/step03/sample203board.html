@@ -13,7 +13,7 @@
 			投稿の内容を表示する場所
 		</div>
 		<hr>
-		<form method="POST" th:action="@{/sample2/step03/board/}" th:object="${commentForm}">
+		<form method="POST" th:action="@{${action}}" th:object="${commentForm}">
 			<input placeholder="名前" th:field="*{name}">
 			<input placeholder="メールアドレス" th:field="*{mailAddress}">
 			<textarea placeholder="コメント内容"  th:field="*{comment}" rows="5" cols="80" wrap="off"></textarea>

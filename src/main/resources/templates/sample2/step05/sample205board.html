@@ -10,7 +10,8 @@
 <body>
 	<div layout:fragment="layoutContent">
 		<div id="board-area">
-			投稿の内容を表示する場所
+			<h2 class="title">サンプル作成者さん、スレッドの登録・投稿表示までを完成させた模様！！</h2>
+			<div th:replace="~{sample2/step05/thread(comments=${comments})}"></div>
 		</div>
 		<hr>
 		<!-- /*	th:object=に指定するキーはバリデーションチェックを行うクラスのクラス名(先頭小文字)

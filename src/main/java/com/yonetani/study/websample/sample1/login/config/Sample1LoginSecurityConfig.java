@@ -69,7 +69,8 @@ public class Sample1LoginSecurityConfig {
 				// 本番環境時、H2DBは起動しないように設定しておく必要あり
 				// サービスが起動していないからnot foundエラーが帰ることを確認要
 				// パス:http://localhost:8080/h2-console/
-				.requestMatchers("/h2-console/**").hasRole("ADMIN")
+				//.requestMatchers("/h2-console/**").hasRole("ADMIN")
+				.requestMatchers("/h2-console/**").permitAll()
 				// まとめて書くこともOKです。好きなほうで
 				//.requestMatchers("/", "/login/").permitAll()
 				// /sample1/adminはADMINロールを持つユーザだけアクセス可能

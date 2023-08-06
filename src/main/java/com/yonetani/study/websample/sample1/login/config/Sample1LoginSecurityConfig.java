@@ -69,6 +69,8 @@ public class Sample1LoginSecurityConfig {
 				// 本番環境時、H2DBは起動しないように設定しておく必要あり
 				// サービスが起動していないからnot foundエラーが帰ることを確認要
 				// パス:http://localhost:8080/h2-console/
+				// h2コンソールへのアクセス権限(ただ、permitAll()に変更してもDBコネクト後に403になっちゃいます。。なぜだろ、とりあえず
+				// 解決に向けまったり調査だけど、mysql接続でもいいかも。。)
 				//.requestMatchers("/h2-console/**").hasRole("ADMIN")
 				.requestMatchers("/h2-console/**").permitAll()
 				// まとめて書くこともOKです。好きなほうで
